@@ -9,7 +9,7 @@ args = parser.parse_args()
 
 
 class clause:
-    def __init__(self, d: set[dis], parent1: "clause" = None, parent2: "clause" = None, id : int = None, action:str = None):
+    def __init__(self, d: set["dis"], parent1: "clause" = None, parent2: "clause" = None, id : int = None, action:str = None):
         self.set = d
         self.parent1 = parent1
         self.parent2 = parent2
@@ -185,9 +185,9 @@ def startResolution():
             string = ""
             for d in finalClause.set:
                 if d.neg:
-                    string += f"~{d.name} v "
-                else:
                     string += f"{d.name} v "
+                else:
+                    string += f"~{d.name} v "
             string = string[:-2]
             print(f"[CONCLUSION]: {string} is unknown")
             clauses.append(finalClause)
