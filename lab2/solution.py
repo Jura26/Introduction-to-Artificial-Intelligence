@@ -78,7 +78,7 @@ def printSolution(a:clause):
     stringList.append(string)
     printSolution(a.parent1)
     printSolution(a.parent2)
-
+ 
 clauses = []
 
 with open(args.ss, "r") as f:
